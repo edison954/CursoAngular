@@ -1,14 +1,14 @@
 "use strict";
 (function () {
-    function getEdad() {
-        return 100 + 100 + 300;
+    function activar(quien, momento, objeto) {
+        if (objeto === void 0) { objeto = "batiseñal"; }
+        if (momento) {
+            console.log(quien + " activ\u00F3 la " + objeto + " en la " + momento);
+        }
+        else {
+            console.log(quien + " activ\u00F3 la " + objeto + ".");
+        }
     }
-    var nombre = "Edison";
-    var edad = 36;
-    var apellido = "Plaza";
-    // const salida = nombre + apellido + edad;
-    // const salida = nombre + " " + apellido + " ( " + edad + " ) ";
-    // const salida = `${nombre} \n${apellido} \n(${edad})`;
-    var salida = "\n  " + nombre + "\n  " + apellido + "\n  (" + (edad + getEdad()) + ")";
-    console.log(salida);
+    // activar("Gordon", "batiseñal", "tarde");
+    activar("Gordon", "tarde");
 })();
