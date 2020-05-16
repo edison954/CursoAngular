@@ -21,3 +21,12 @@ Instalar
 compilar archivo .ts de typescript (app.ts)
     tsc app.ts          --> genera archivo app.js compilado
 
+crear archivo de configuracion typescript
+    tsc --init
+
+modo watch en typescript
+    tsc -w
+
+
+
+
