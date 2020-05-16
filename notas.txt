@@ -1,0 +1,23 @@
+Instalar 
+    nodejs 
+        node -v
+        npm -v
+
+    typescript:
+        npm install -g typescript
+        tsc --version
+
+    angular cli
+        npm install -g @angular/cli
+
+    ionic
+        npm install -g @ionic/cli
+
+    git
+        git config --global user.name = "Edison"
+        git config --global user.email edison@gmail.com
+
+-----------
+compilar archivo .ts de typescript (app.ts)
+    tsc app.ts          --> genera archivo app.js compilado
+
