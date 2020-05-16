@@ -1,21 +1,19 @@
 (function () {
-  let mensaje: string = "hola";
-  let numero: number = 123;
-  let booleano: boolean = true;
-  let hoy: Date = new Date();
-  let cualquiercosa: string | number | Date | boolean;
-  cualquiercosa = mensaje;
-  cualquiercosa = numero;
-  cualquiercosa = booleano;
-  cualquiercosa = hoy;
+  function getEdad() {
+    return 100 + 100 + 300;
+  }
 
-  let spriderman = {
-    nombre: "Peter",
-    edad: 30,
-  };
+  const nombre = "Edison";
+  const edad = 36;
+  const apellido = "Plaza";
 
-  spriderman = {
-    nombre: "Juan",
-    edad: 15,
-  };
+  // const salida = nombre + apellido + edad;
+  // const salida = nombre + " " + apellido + " ( " + edad + " ) ";
+  // const salida = `${nombre} \n${apellido} \n(${edad})`;
+  const salida = `
+  ${nombre}
+  ${apellido}
+  (${edad + getEdad()})`;
+
+  console.log(salida);
 })();

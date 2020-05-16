@@ -1,20 +1,14 @@
 "use strict";
 (function () {
-    var mensaje = "hola";
-    var numero = 123;
-    var booleano = true;
-    var hoy = new Date();
-    var cualquiercosa;
-    cualquiercosa = mensaje;
-    cualquiercosa = numero;
-    cualquiercosa = booleano;
-    cualquiercosa = hoy;
-    var spriderman = {
-        nombre: "Peter",
-        edad: 30,
-    };
-    spriderman = {
-        nombre: "Juan",
-        edad: 15,
-    };
+    function getEdad() {
+        return 100 + 100 + 300;
+    }
+    var nombre = "Edison";
+    var edad = 36;
+    var apellido = "Plaza";
+    // const salida = nombre + apellido + edad;
+    // const salida = nombre + " " + apellido + " ( " + edad + " ) ";
+    // const salida = `${nombre} \n${apellido} \n(${edad})`;
+    var salida = "\n  " + nombre + "\n  " + apellido + "\n  (" + (edad + getEdad()) + ")";
+    console.log(salida);
 })();
