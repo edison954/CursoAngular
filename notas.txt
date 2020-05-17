@@ -43,6 +43,54 @@ modo watch en typescript
   }
 
 
+FUNCION FLECHA 
 
+  const miFuncion = function (a: string) {
+    return a.toUpperCase();
+  };
+  // function funcion2(a: string) {
+  //   return a;
+  // }
+  const miFuncionF = (a: string) => {
+    return a.toUpperCase();
+  };
+
+  const miFuncionF1 = (a: string) => a.toUpperCase();
+
+  console.log(miFuncion("normal"));
+  console.log(miFuncionF("flecha"));
+  console.log(miFuncionF1("flecha1"));
+
+DESESTRUCTURACION DE OBJETOS
+
+  const avanger = {
+    nombre: "Steve",
+    clave: "Capitán América",
+    poder: "Droga",
+  };
+
+  console.log(avanger.nombre);
+  console.log(avanger.clave);
+  console.log(avanger.poder);
+
+  // Desestructuracion de objetos
+
+  const { nombre, clave, poder } = avanger;
+
+  console.log(nombre);
+  console.log(clave);
+  console.log(poder);
+
+DESESTRUCTURACION COMO ARGUMENTO
+
+  const extraer = ({ nombre, clave, poder }: any) => {
+    //const { nombre, clave, poder } = avanger;
+
+    console.log(nombre);
+    console.log(clave);
+    console.log(poder);
+  };
+
+  extraer(avanger);
 
 
