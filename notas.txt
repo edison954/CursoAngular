@@ -114,3 +114,36 @@ CLASES
   //const antman: Avanger = new Avanger();
   const antman = new Avanger("Antman", "Capi");
   console.log(antman);
+
+
+TYPESCRIPT-IMPORTER
+cd typescript-IMPORTER
+npm install
+
+--actualizar npm
+npm install -g npm
+
+
+class Xmen {
+  constructor(public nombre: string, public clave: string) {}
+}
+
+
+DECORADORES DE CLASES
+para añadir funcionalidad a la clase
+@algo.   
+
+function imprimirConsola(constructorClase: Function) {
+  console.log(constructorClase);
+}
+
+@imprimirConsola
+export class Xmen {
+  constructor(public nombre: string, public clave: string) {}
+
+  imprimir() {
+    console.log(`${this.nombre}-${this.clave}`);
+  }
+}
+
+
