@@ -164,4 +164,30 @@ ng serve -p 4201
 
 ng serve -o           --> para que abra el navegador por defecto
 
+estructura del proyecto
+
+e2e  (end to end)  pruebas de extremo a extremo 
+node_modules      paquetes que installa
+src    donde esta nuestra app de angular
+.editorconfig   configuraciones del editor
+.gitignore    
+angular.json  archivo de configuracion de angular.
+package-lock-json   le indica a la aplicacion como fue creado el package.json
+package.json
+RADME.md 
+tsconfig.json
+tslint.json      ayuda a escribir codigo limpio de js y tsc
+
+src\
+  app\
+Karma.config.js  ->archivo de configuracion pruebas de Karma
+main.js   
+
+bootstrap
+  -- getbootstrap.com  /download  y copia el link del cdn
+
+crear componentes por cli
+  ng g c components/footer
+
+
 
