@@ -147,3 +147,21 @@ export class Xmen {
 }
 
 
+----ANGULAR (angular.io)
+
+paginas de codigo de ejemplo, para probar codigo
+https://plnkr.co/
+https://stackblitz.com
+
+ng new myApp
+
+cd myApp
+ng serve --open 
+
+Angular puerto 4200 por defecto
+
+ng serve -p 4201
+
+ng serve -o           --> para que abra el navegador por defecto
+
+
