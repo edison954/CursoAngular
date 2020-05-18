@@ -22,6 +22,7 @@
   }
 
   const constante = "este codigo no puede cambiar";
+  console.log(constante);
 
   const resultadoDoble1 = (a: number, b: number) => (a + b) * 2;
 
