@@ -190,4 +190,69 @@ crear componentes por cli
   ng g c components/footer
 
 
+Directivas estructurales
+*ngIf
+*ngFor
+
+---------------- SPA
+ng new spa 
+
+(seleccionar no para no routing y css)
+
+ng serve -o    --> para iniciar en navegador por defecto
+
+- crear la estructura del proyecto
+
+crear carpetas en app
+components\shared
+
+ng g c components/shared/navbar
+
+instalando bootstrap  (3 formas)
+
+1. desde la documentacion de getbootstrap.com  
+    /download
+    BootstrapCDN  (copiar ruta) pegarlas en index.html en el head
+    copiar urls scripts y ponerlos al final del index.html
+
+2.  en la documentacion de bootstrap, Download (de la parte sup) descargando local la libreria
+    copiar carpetas css y js  pegarlos en src/assets/libs
+    ajustar el index.html
+    <link rel="stylesheet" href="./assets/libs/bootstrap/css/bootstrap.min.css">
+
+3.  por node package manager
+      npm install bootstrap --save
+      npm install jquery --save
+      npm install popper.js --save
+      ajustar archivo angular.json para cuando ejecute la app, tome las liberrias
+
+crear nvabar, jumbotron
+
+      
+ng g c components/heroes -is      --> inline style para que no genere el archivo de estilos
+
+---------------------------routing
+
+app.routes.ts
+
+
+en app. moduele
+
+// Rutas
+import { APP_ROUTING } from "./app.routes";
+
+// Servicios
+
+// Componentes
+import { AppComponent } from './app.component';
+
+
+
+
+
+
+
+
+
+
 
