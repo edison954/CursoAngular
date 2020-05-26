@@ -247,12 +247,42 @@ import { APP_ROUTING } from "./app.routes";
 import { AppComponent } from './app.component';
 
 
+--------------Servicios
+HeroesComponent -> servico heroes  
+
+- Brindar informacion a quien lo necesite
+- Realizar peticiones CRUD
+- Mantener la data de forma persistente
+- Servir como recurso reutilizable para nuestra app
+
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class HeroesService {
+    constructor() { }
+}
 
 
+para renderizar la propiedad en el html : 2 formas
+1-       <img src="{{heroe.img}}" class="card-img-top" alt="...">
+2.     <img [src]="heroe.img" class="card-img-top" alt="...">
 
 
+crear componente heroe
+ng g c components/heroe -is
 
 
+dos formas de moverse con el router con parametros.. 
+con boton 
+
+<button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary btn-block">Ver más...</button>
+  verHeroe(idx: number) {
+    console.log(idx);
+    this.router.navigate(['/heroe', idx]);
+  }
+
+con link
+<a [routerLink]="['/heroe', i]" class="btn btn-outline-primary"> Ver más link</a>
 
 
 
