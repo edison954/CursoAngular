@@ -285,4 +285,52 @@ con link
 <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary"> Ver más link</a>
 
 
+---- recuperar un id de la url (con ActivatedRoute)
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+@Component({
+  selector: 'app-heroe',
+  templateUrl: './heroe.component.html'
+})
+export class HeroeComponent implements OnInit {
+
+  constructor(
+    private activatedRoute: ActivatedRoute
+  ) {
+
+    this.activatedRoute.params.subscribe(params => {
+      console.log(params);
+    });
+  }
+
+
+------pipes
+Transforman la data en el template de forma visual (la data no se cambia solo se cambia lo visual)
+pipes disponibles
+
+currency
+date
+uppercase 
+json
+limitTo
+lowercase
+async
+decimal
+percent
+
+
+ng g c components/buscador -is
+
+comunicacion de un componente padre a un componente hijo y visebersa
+
+ng g c components/heroeTarjeta --spec=false
+
+@inputs  y @outputs
+
+@input  > de un componente padre a un componente hijo
+@output > emitir un evento de un componente hijo a un padre (va de la mano  Output, EventEmitter )
+
+
+
 
