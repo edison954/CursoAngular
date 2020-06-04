@@ -332,5 +332,38 @@ ng g c components/heroeTarjeta --spec=false
 @output > emitir un evento de un componente hijo a un padre (va de la mano  Output, EventEmitter )
 
 
+Pipes  |   (solo cambio visual)
+
+Siempre reciben un ARGUMENTO
+No mutan los argumentos
+
+'edison' | uppercase
+
+Pipes uppercase y lowercase
+Pipe Slice
+Pice Decimal
+Pipe Percent
+Pipe Currency
+Pipe Json
+Pipe Async
+Pipe Date
+Pipes personalizados
+Capitalizar palabras y nombres
+Creación de un pipe, que permite cargar recursos externos de forma segura.
+
+nuevo proyecto      -------PIPES
+
+ng new pipes 
+
+ng serve -o
+
+getbootstrap.com  / get starter
+
+poner css en index.html
+ajustar clase del body class="container"
+
+poner pipe fecha en español:
+
+ng add @angular/localize
 
 
