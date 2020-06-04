@@ -366,4 +366,9 @@ poner pipe fecha en español:
 
 ng add @angular/localize
 
+Crear pipe personalizados:
+
+ng g p pipes/capitalizado   ---> para capitalizar un texto
+
+ng g p pipes/domseguro    ---> para retornar una url desde el component.
 
