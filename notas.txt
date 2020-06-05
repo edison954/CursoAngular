@@ -372,3 +372,30 @@ ng g p pipes/capitalizado   ---> para capitalizar un texto
 
 ng g p pipes/domseguro    ---> para retornar una url desde el component.
 
+app de spotify
+
+api de spotify 
+https://developer.spotify.com/console/
+
+ng new spotiapp
+
+ir a la pagina 
+https://developer.spotify.com/dashboard/
+loguearse y generar id
+
+genera el client id y clientsecret
+
+ng serve
+
+crear componentes
+ng g c components/home --spec=false -is
+ng g c components/search --spec=false -is
+ng g c components/artista --spec=false -is
+ng g c components/shared/navbar --spec=false -is
+
+api de paises
+https://restcountries.eu/
+
+Peticiones http
+import { HttpClientModule } from '@angular/common/http';
+
