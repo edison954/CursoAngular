@@ -399,3 +399,18 @@ https://restcountries.eu/
 Peticiones http
 import { HttpClientModule } from '@angular/common/http';
 
+token para uso del api de spotify
+
+POST https://accounts.spotify.com/api/token
+grant_type  client_credentials
+client_id
+client_secret
+
+para peticiones http se recomienda crear un servicio.
+
+ng g s services/spotify --spec=false
+
+operador map del observable.   (simil a una llave de agua)
+
+permite controlar que tanta informacion quiero recuperar
+import { map } from 'rxjs/operators';
