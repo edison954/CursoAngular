@@ -16,4 +16,10 @@ export class DeseosService {
 
     console.log(this.listas);
   }
+
+  crearLista(titulo: string) {
+    const nuevaLista = new Lista(titulo);
+    this.listas.push(nuevaLista);
+  }
+
 }
