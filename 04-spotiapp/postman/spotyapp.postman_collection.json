@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "699fd712-2435-4f8d-911f-6a7c124df6ca",
+		"name": "spotyapp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "authentication get token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "b5069d3d21ec4ac69c1877765590c4e5",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "cd13f678bf0a461cbfe02831f32d41eb",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://accounts.spotify.com/api/token",
+					"protocol": "https",
+					"host": [
+						"accounts",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"api",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
