@@ -1,3 +1,5 @@
+import { ComponentsModule } from './../../components/components.module';
+import { ListasComponent } from './../../components/listas/listas.component';
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -12,6 +14,7 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     IonicModule,
     CommonModule,
     FormsModule,
+    ComponentsModule,
     ExploreContainerComponentModule,
     Tab1PageRoutingModule
   ],
