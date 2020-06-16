@@ -1,3 +1,4 @@
+import { Lista } from './../../models/lista.model';
 import { DeseosService } from './../../services/deseos.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
@@ -18,7 +19,7 @@ export class Tab1Page {
   }
 
   async agregarLista() {
-    // this.router.navigateByUrl('tabs/tab1/agregar');
+
 
     const alert = await this.alertCtrl.create({
       cssClass: 'my-custom-class',
@@ -46,7 +47,8 @@ export class Tab1Page {
               return;
             }
             // Crear la lista
-            this.deseosService.crearLista(data.titulo);
+            const listaId = this.deseosService.crearLista(data.titulo);
+            this.router.navigateByUrl(`/tabs/tab1/agregar/${listaId}`);
 
           }
         }
@@ -55,6 +57,10 @@ export class Tab1Page {
 
     await alert.present();
 
+  }
+
+  listaSeleccionada(lista: Lista) {
+    this.router.navigateByUrl(`/tabs/tab1/agregar/${lista.id}`);
   }
 
 
