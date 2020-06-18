@@ -21,5 +21,6 @@
 <button (click)="ejecutar()" type="button" class="btn btn-primary" [disabled]="loading">
   <!-- <i class="fa fa-refresh fa-spin"></i> -->
   <i [ngClass]="{'fa-save': !loading, 'fa-refresh fa-spin':loading}" class="fa"></i>
-  Guardar cambios
+  <span *ngIf="!loading">Guardar cambios</span>
+  <span *ngIf="loading">Espere por favor</span>
 </button>
