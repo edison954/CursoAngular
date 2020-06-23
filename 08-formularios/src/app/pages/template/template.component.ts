@@ -46,6 +46,7 @@ export class TemplateComponent implements OnInit {
       });
       return;
     }
+    forma.reset();
     console.log(forma.value);
   }
 

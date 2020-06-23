@@ -414,3 +414,353 @@ operador map del observable.   (simil a una llave de agua)
 
 permite controlar que tanta informacion quiero recuperar
 import { map } from 'rxjs/operators';
+
+pipe para controlar urls de imagenes no existentes
+
+ng g p pipes/noimage --spec=false
+
+crear componente generico de tarjetas
+ng g c components/tarjetas --spec=false
+
+crear componente loading generico
+ng g c components/shared/loading --spec=false -is    --> sin archivo de pruebas, sin archivo de stilos (inline style)
+
+para iconos
+https://fontawesome.com/6?next=%2F
+se registra y se pone el script en el index.html
+
+ver artista:
+ajuster el app.router
+para enviar parametro por la url
+import { Router } from '@angular/router';
+this.router.navigate(['/artist', artistaId]);
+
+para recibir parametro
+import { ActivatedRoute } from '@angular/router';
+  constructor(private router: ActivatedRoute) {
+
+    this.router.params.subscribe(params => {
+      console.log(params['id']);
+    });
+  }
+
+
+reproductir sonido html5
+<audio [src]="track.preview_url" controls></audio>
+
+-- Manejo de errores en un observable
+
+
+  constructor(private spotify: SpotifyService) {
+    this.loading = true;
+    this.error = false;
+    this.spotify.getNewReleases()
+      .subscribe((data: any) => {
+        this.nuevasCanciones = data;
+        this.loading = false;
+      }, (errorServicio) => {
+        this.loading = false;
+        this.error = true;
+        console.log(errorServicio.error.error.message);
+        this.mensajeError = errorServicio.error.error.message;
+      });
+
+  }
+
+
+  --spotify get token
+
+https://github.com/Klerith/spotify-get-token
+
+curso de node https://fernando-herrera.com/#/curso/node-cero-experto
+
+
+
+SECCION DE IONIC
+https://ionicframework.com/
+
+app en appstore Ionic DevApp
+
+npm install -g ionic
+ionic start myApp
+ionic start myApp tabs
+ionic start myApp sidemenu
+
+ionic start 05-deseos tabs
+cd 05-deseos
+ionic serve
+
+localhost:8100
+
+extenciones para vscode
+ionic snippets
+auto close tag
+
+para iconos que ya vienen instalados con ionic cli
+https://ionicons.com/
+
+generar servicio:
+
+ionic g s services/deseos
+
+ionic g s services/deseos --skipTests=true
+
+clg tab  --> console.log()
+
+pagina para agregar
+ionic g page pages/agregar
+
+navegar por url
+this.router.navigateByUrl('/agregar');
+
+Localstorage
+plugin Storage
+
+recuperar id de la url
+ const listaId = this.route.snapshot.paramMap.get('listaId');
+
+ngModel
+<ion-input type="text"  [(ngModel)]="nombreItem" ></ion-input>
+
+ [(ngModel)]   --> parentecis porque emite un evento, y corchetes porque escucha un evento
+
+
+ animate
+ https://daneden.github.io/animate.css/
+
+ 
+console.log({ pendientes });  --> ver propiedad y valor en consola
+
+Crear Modulo
+
+ionic g m components          --> genera un modulo
+ionic g c components/listas   --> genera un componente dentro del modulo components
+
+PIPE como filtro
+
+ionic g m pipes         -->> crear modulo
+ionic g pipe pipes/filtroCompletado     --> crear el pipe
+
+Pipe impuro  --> para que se llame siempre que se detectan cambios
+
+@Pipe({
+  name: 'filtroCompletado',
+  pure: false
+})
+
+@ViewChild()      -->> poder agarrar en el ts un componente o elmento html definido en el .html
+
+@ViewChild(IonList) lista: IonList;
+
+Curso de ionic usando angular
+https://www.udemy.com/ionic-ios-android-pwa-appstore-playstore-push/?couponCode=IONIC-ANGULAR-10
+
+ionic play list
+https://www.youtube.com/watch?v=RWCb_ARrSxM&list=PLCKuOXG0bPi2EGYmUq7eidFV8A95xTjEx
+
+
+
+----------------------------------- nuevo tema, directivas de atributos, ciclo de vida, ngswitch
+
+ng new miselaneos
+
+https://getbootstrap.com/docs/4.5/getting-started/download/
+https://jquery.com/download/
+tether.io
+
+ajustar angular.json en la parte de scripts y styles
+
+            "styles": [
+              "src/styles.css",
+              "assets/b4/css/bootstrap.min.css"
+            ],
+            "scripts": [
+              "assets/jquery/jquery-3.5.1.slim.min.js",
+              "assets/tether/tether.min.js",
+              "assets/b4/js/bootstrap.min.js"
+            ],
+
+ng serve
+
+https://fontawesome.com/
+
+ngStyle y su uso con directivas de atributos
+
+ng g c components/ngStyle -it -is    --> template en el mismo archivo, estilos en el mismo archivo
+
+
+<p [style.fontSize.px]="'40px'">
+      Hola mundo... esta es una etiqueta
+</p>
+
+aplicar estilos a un componente en particular
+
+ng g c components/css -it -is
+
+NgClass
+
+ng g c components/clases -is
+
+
+<div [ngClass]="alerta" class="alert" role="alert">
+  A simple primary alert—check it out!
+</div>
+
+<button type="button" class="btn btn-info" (click)="alerta = 'alert-info'">Info</button>
+<button type="button" class="btn btn-success" (click)="alerta = 'alert-success'">Success</button>
+
+<br><br>
+<h3 [ngClass]="{'text-danger': propiedades.danger, 'text-info': !propiedades.danger}">
+  Hola Mundo
+</h3>
+
+<button (click)="propiedades.danger=!propiedades.danger" type="button" class="btn"
+  [ngClass]="{'btn-danger': propiedades.danger, 'btn-info':!propiedades.danger}">Cambiar</button>
+
+
+
+  prevenir doble click
+
+  
+<h3>Proceso Asincrono</h3>
+
+<button (click)="ejecutar()" type="button" class="btn btn-primary" [disabled]="loading">
+  <!-- <i class="fa fa-refresh fa-spin"></i> -->
+  <i [ngClass]="{'fa-save': !loading, 'fa-refresh fa-spin':loading}" class="fa"></i>
+  Guardar cambios
+</button>
+
+en ts:
+
+loading: boolean = false;
+  ejecutar() {
+
+    this.loading = true;
+
+    setTimeout(() => this.loading = false, 3000);
+  }
+
+
+
+<button (click)="ejecutar()" type="button" class="btn btn-primary" [disabled]="loading">
+  <!-- <i class="fa fa-refresh fa-spin"></i> -->
+  <i [ngClass]="{'fa-save': !loading, 'fa-refresh fa-spin':loading}" class="fa"></i>
+  <span *ngIf="!loading">Guardar cambios</span>
+  <span *ngIf="loading">Espere por favor</span>
+</button>
+
+
+Directivas personalizadas
+
+ng g d directives/resaltado
+
+
+<hr>
+<p [appResaltado]="'blue'">
+  Hola Mundo
+</p>
+
+
+Ngswich
+
+ng g c components/ngSwitch -is
+
+
+<div [ngSwitch]="alerta">
+  <div *ngSwitchCase="'success'">success</div>
+  <div *ngSwitchCase="'info'">info</div>
+  <div *ngSwitchCase="'warning'">warning</div>
+  <div *ngSwitchDefault>danger</div>
+</div>
+
+
+<button (click)="alerta='success'" type="button" class="btn btn-default">
+  Cambiar
+</button>
+
+Rutas y Rutas hijas
+
+ng g c components/home -it -is
+ng g c components/usuario/usuarioNuevo -is -it --flat     -->>> para que cree el componente en la mista carpeta del otro
+ng g c components/usuario/usuarioEditar -is -it --flat
+ng g c components/usuario/usuarioDetalle -is -it --flat
+
+
+FORMULARIOS
+
+2 tipos 
+  - por template  (todo en html)
+  - reactivos  (logica en ts)
+
+ng g c pages/template --skipTests
+ng g c pages/reactive --skipTests
+
+en app.module.ts
+import { FormsModule } from '@angular/forms';
+
+
+en input class:
+
+control con valor no cambiado
+form-control ng-pristine ng-valid ng-touched
+
+control con valor cambiado
+form-control ng-valid ng-touched ng-dirty
+
+<form autocomplete="off" (ngSubmit)="guardar(forma)" #forma="ngForm">
+
+  guardar(forma: NgForm) {
+    console.log(forma);
+  }
+
+
+ng g s services/pais --skipTest   
+
+insertar un item a la primera posicion de un arreglo
+
+        this.paises.unshift({
+          nombre: '[ Seleccione pais]',
+          codigo: ''
+        });
+
+
+tener en cuenta que para usar el ngModel en un control se necesita tener el name en el control        
+
+
+FORMULARIOS reactivos
+
+validaciones del lado del .ts, mayor control sobre el FORMULARIOS
+
+    this.fb.group({
+      nombre: ['']          ---> [''] -> valor por defecto, ['',[]]  --> validaciones sincronas,  --> ['',[],[]] --> validaciones asyncronas
+    });
+
+
+---- para ver codigo del FORMULARIOS
+
+<hr>
+<pre>
+  Estado del formulario {{ forma.valid }}
+  <br>
+  Status: {{forma.status}}
+</pre>
+
+<pre>
+  {{forma.value | json}}
+</pre>
+
+
+para el color rojo
+una forma
+
+
+        <input class="form-control" type="text" placeholder="Nombre" formControlName="nombre"
+          [class.is-invalid]="forma.get('nombre').invalid && forma.get('nombre').touched">
+
+
+Validaciones personalizadas
+crear servicio:
+ng g s services/validadores --skipTests
+
+ctrl + space        ---> mostrar ayuda
+
