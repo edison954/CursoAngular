@@ -16,6 +16,7 @@ export class ReactiveComponent implements OnInit {
     private validadores: ValidadoresService) {
     this.crearFormulario();
     this.cargarDataAlFormulario();
+    this.crearListeners();
 
   }
 
@@ -69,6 +70,21 @@ export class ReactiveComponent implements OnInit {
     }, {
       validators: this.validadores.passwordsIguales('pass1', 'pass2')
     });
+  }
+
+  crearListeners() {
+    // // ver todos los cambios del formulario
+    // this.forma.valueChanges.subscribe(valor => {
+    //   console.log(valor);
+    // });
+
+    // this.forma.statusChanges.subscribe(status => {
+    //   console.log(status);
+    // });
+
+    // ver los cambios de una campo en especifico
+    this.forma.get('nombre').valueChanges.subscribe(console.log);
+
   }
 
   cargarDataAlFormulario() {
