@@ -764,3 +764,98 @@ ng g s services/validadores --skipTests
 
 ctrl + space        ---> mostrar ayuda
 
+
+-------------------------- App de CRUD
+
+generar archivo de rutas:
+
+ng g m appRouting --flat
+
+ng g c pages/heroe
+ng g c pages/heroes
+
+
+fontawesome
+<script src="https://kit.fontawesome.com/e34f9e7823.js" crossorigin="anonymous"></script>
+animate.css
+
+https://animate.style/#usage
+
+proyecto en firebase
+
+http://firebase.google.com/
+
+https://login-app-1e2ce.firebaseio.com/heroes.json
+
+ng g s services/heroes
+
+
+crear un objeto diferente y romper la referencia
+
+    const heroeTemp = {
+      ...heroe
+    };
+
+// eliminar propiedad id
+    delete heroeTemp.id;
+
+
+para alertas al usuario
+sweetAlert2
+
+https://sweetalert2.github.io/
+
+npm install sweetalert2
+
+
+FIRECHAT
+
+crear proyecto en 
+https://console.firebase.google.com/
+
+intalar bootsptrap
+
+instalar libreria angularfire2
+
+npm install angularfire2 firebase --save
+
+ng g c components/chat -is --spec=false
+ng g s providers/chat --spec=false
+
+Login con google y Twitter
+ng g c components/login -is --spec=false
+
+
+AUTHENTICACION CON AUTH0 
+
+ng g c components/navbar -is --skipTests
+
+npm install @auth0/auth0-spa-js --save
+
+ctl + p   escribir @      para ver todas las propiedades y metodos de un archivo
+
+ng g c components/callback --skipTests
+
+CREAR GUARD
+ng g guard services/auth --skipTests
+
+
+LOGIN PROPIO  07-bonus-loginApp
+https://firebase.google.com/
+
+https://firebase.google.com/docs/reference/rest/auth#section-create-email-password
+
+
+ng g s services/auth
+
+    // const authData = {
+    //   email: usuario.email,
+    //   password: usuario.password,
+    //   returnSecureToken: true
+    // };
+
+    // es lo mismo que
+    const authData = {
+      ...usuario,
+      returnSecureToken: true
+    };
