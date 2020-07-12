@@ -866,3 +866,5 @@ https://sweetalert2.github.io/
 
 npm install sweetalert2
 
+Guard para prevenir ingreso a paginas no autenticadas
+ng g guard guards/auth
