@@ -859,3 +859,10 @@ ng g s services/auth
       ...usuario,
       returnSecureToken: true
     };
+
+
+sweetalert2
+https://sweetalert2.github.io/
+
+npm install sweetalert2
+

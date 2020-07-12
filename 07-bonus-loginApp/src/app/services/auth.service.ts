@@ -19,7 +19,9 @@ export class AuthService {
   // verificar login y password
   // https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.leerToken();
+  }
 
   logout() {
 
