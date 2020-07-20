@@ -11,6 +11,9 @@ export class PeliculasService {
   private apiKey = '';
   private urlMoviedb = 'https://api.themoviedb.org/3';
 
+  peliculas: any[] = [];
+
+
   constructor(
     private http: HttpClient,
     private jsonp: HttpClientJsonpModule
@@ -18,15 +21,18 @@ export class PeliculasService {
   ) { }
 
   getPopulares() {
-    let url = `${this.urlMoviedb}/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api_key=${this.apiKey}&language=es`;
+    let url = `${this.urlMoviedb}/discover/movie?sort_by=popularity.desc&api_key=${this.apiKey}&language=es`;
 
-    return this.http.jsonp(url, 'callback').pipe(
-      map(res => res.toString())
+    return this.http.get(url).pipe(
+      map((res: any) => {
+        console.log(res);
+        return res.results;
+      })
     );
   }
 
   getPopularesNinos() {
-    let url = `${this.urlMoviedb}/discover/moview?sort_by=popularity.desc&api_key=${this.apiKey}&language=es&callback=JSONP_CALLBACK`;
+    let url = `${this.urlMoviedb}/discover/movie?certification_country=US&certification.lte=G&api_key=${this.apiKey}`;
 
     return this.http.get(url).pipe(
       map((res: any) => {
@@ -38,15 +44,19 @@ export class PeliculasService {
   }
 
 
-  // buscarPelicula(texto: string) {
+  buscarPelicula(texto: string) {
 
-  //   let url = `${this.urlMoviedb}/search/movie?query=${texto}&sort_by=popularity.desc&api_key=${this.apiKey}&language=es&callback=JSONP_CALLBACK`;
+    let url = `${this.urlMoviedb}/search/movie?query=${texto}&sort_by=popularity.desc&api_key=${this.apiKey}&language=es`;
 
-  //   return this.http.jsonp(url, 'callback').pipe(
-  //     map(res => res.toString())
-  //   );
+    return this.http.get(url).pipe(
+      map((res: any) => {
+        console.log(res);
+        this.peliculas = res.results;
+        return res.results;
+      })
+    );
 
-  // }
+  }
 
   getCartelera() {
     let desde = new Date();
