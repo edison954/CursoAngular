@@ -868,3 +868,10 @@ npm install sweetalert2
 
 Guard para prevenir ingreso a paginas no autenticadas
 ng g guard guards/auth
+
+
+peliculas App
+JsonP.      --> para descargar un json deuna url
+
+
+
