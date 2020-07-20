@@ -18,12 +18,25 @@ export class PeliculasService {
   ) { }
 
   getPopulares() {
-    let url = `${this.urlMoviedb}/discover/moview?sort_by=popularity.desc&api_key=${this.apiKey}&language=es&callback=JSONP_CALLBACK`;
+    let url = `${this.urlMoviedb}/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api_key=${this.apiKey}&language=es`;
 
     return this.http.jsonp(url, 'callback').pipe(
       map(res => res.toString())
     );
   }
+
+  getPopularesNinos() {
+    let url = `${this.urlMoviedb}/discover/moview?sort_by=popularity.desc&api_key=${this.apiKey}&language=es&callback=JSONP_CALLBACK`;
+
+    return this.http.get(url).pipe(
+      map((res: any) => {
+        console.log(res);
+        return res.results;
+      })
+    );
+
+  }
+
 
   // buscarPelicula(texto: string) {
 
@@ -48,9 +61,9 @@ export class PeliculasService {
     let url = `${this.urlMoviedb}/discover/movie?primary_release_date.gte=${desdeStr}&primary_release_date.lte=${hastaStr}&api_key=${this.apiKey}&language=es`;
 
     return this.http.get(url).pipe(
-      map(res => {
+      map((res: any) => {
         console.log(res);
-        return res;
+        return res.results;
       })
     );
   }
