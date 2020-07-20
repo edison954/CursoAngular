@@ -79,6 +79,18 @@ export class PeliculasService {
   }
 
 
+  getPelicula(id: string) {
+    let url = `${this.urlMoviedb}/movie/${id}?api_key=${this.apiKey}`;
+
+    return this.http.get(url).pipe(
+      map((res: any) => {
+        console.log(res);
+        return res;
+      })
+    );
+
+  }
+
 
 
 }
