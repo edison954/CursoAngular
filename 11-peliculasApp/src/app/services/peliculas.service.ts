@@ -25,12 +25,34 @@ export class PeliculasService {
     );
   }
 
-  buscarPelicula(texto: string) {
+  // buscarPelicula(texto: string) {
 
-    let url = `${this.urlMoviedb}/search/movie?query=${texto}&sort_by=popularity.desc&api_key=${this.apikey}&language=es&callback=JSONP_CALLBACK`;
+  //   let url = `${this.urlMoviedb}/search/movie?query=${texto}&sort_by=popularity.desc&api_key=${this.apiKey}&language=es&callback=JSONP_CALLBACK`;
 
-    return this.jsonp.get(url)
-      .map(res => res.json());
+  //   return this.http.jsonp(url, 'callback').pipe(
+  //     map(res => res.toString())
+  //   );
+
+  // }
+
+  getCartelera() {
+    let desde = new Date();
+    let hasta = new Date();
+    hasta.setDate(hasta.getDate() + 7);
+
+    // let desdeStr = `${desde.getFullYear()}-${desde.getMonth() + 1}-${desde.getDay()}`;
+    //let hastaStr = `${hasta.getFullYear()}-${hasta.getMonth() + 1}-${hasta.getDay() + 1}`;
+    let desdeStr = `2020-07-01`;
+    let hastaStr = `2020-07-30`;
+
+    let url = `${this.urlMoviedb}/discover/movie?primary_release_date.gte=${desdeStr}&primary_release_date.lte=${hastaStr}&api_key=${this.apiKey}&language=es`;
+
+    return this.http.get(url).pipe(
+      map(res => {
+        console.log(res);
+        return res;
+      })
+    );
   }
 
 

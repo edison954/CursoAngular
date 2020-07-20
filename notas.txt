@@ -878,3 +878,9 @@ JsonP.      --> para descargar un json deuna url
 ng g s services/peliculas --skipTests
 
 private apiKey = '866baac4f7b722ab78622911fe683e61';
+
+ng g c components/navbar -is
+ng g c components/home -is
+ng g c components/pelicula -is
+ng g c components/buscar -is
+ng g p pipes/peliculaImagen
