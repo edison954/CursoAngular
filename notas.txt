@@ -896,3 +896,4 @@ ng add @angular/material
 ng g module material --flat
 
 
+ng g c components/mapa  --module=app.module --spec=false    --- adiciona componente a un modulo especifico (cuando se tienen varios)
