@@ -29,7 +29,8 @@ export class MapaEditarComponent implements OnInit {
   }
 
   guardarCambios() {
-    console.log('°°');
+    console.log(this.forma.value);
+    this.dialogRef.close(this.forma.value);
   }
 
   onNoClick(): void {
