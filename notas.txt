@@ -897,3 +897,14 @@ ng g module material --flat
 
 
 ng g c components/mapa  --module=app.module --spec=false    --- adiciona componente a un modulo especifico (cuando se tienen varios)
+
+angular maps  https://angular-maps.com/
+
+npm install @agm/core --save
+
+get apikey from google 
+https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en#key
+
+AIzaSyC6fBqNJ5Vlab-120VhAWkqYON7icOKwjw
+
+npm cache clean --force 

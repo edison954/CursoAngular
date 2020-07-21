@@ -2,7 +2,10 @@
   <mat-card-title>Mapa </mat-card-title>
 
   <mat-card-content>
-    xyz
+
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="15">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
 
   </mat-card-content>
 
