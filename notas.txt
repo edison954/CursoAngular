@@ -892,5 +892,7 @@ ng g c components/home/galeria -is --flat       flat para que no cree carpeta
 ng new mapas
 ng add @angular/material
 
+// Crear un nuevo archivo de modulo.  (para modulos de material)
+ng g module material --flat
 
 
