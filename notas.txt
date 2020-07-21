@@ -908,3 +908,5 @@ https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en#ke
 AIzaSyC6fBqNJ5Vlab-120VhAWkqYON7icOKwjw
 
 npm cache clean --force 
+
+ng g c components/mapa/mapa-editar --flat --spec=false --module=app.module
