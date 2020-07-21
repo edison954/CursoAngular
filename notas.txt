@@ -886,3 +886,11 @@ ng g c components/buscar -is
 ng g p pipes/peliculaImagen
 
 ng g c components/home/galeria -is --flat       flat para que no cree carpeta
+
+
+--------MAPAS
+ng new mapas
+ng add @angular/material
+
+
+
