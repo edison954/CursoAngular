@@ -934,3 +934,8 @@ https://quicktype.io/          para convertir un json en un modelo / clase
 https://app.quicktype.io/
 
 f2    -> cambiar nombre y referencias 
+
+this.videos.push(...resp);  --> para  dicionar el arreglo resp a this.videos
+
+npm install sweetalert2@8.11.6 
+
