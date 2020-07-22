@@ -929,3 +929,8 @@ UCuaPTYj15JSkETGnEseaFFg
 
 uploads = playlist
 UUuaPTYj15JSkETGnEseaFFg
+
+https://quicktype.io/          para convertir un json en un modelo / clase
+https://app.quicktype.io/
+
+f2    -> cambiar nombre y referencias 
