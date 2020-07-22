@@ -910,3 +910,22 @@ AIzaSyC6fBqNJ5Vlab-120VhAWkqYON7icOKwjw
 npm cache clean --force 
 
 ng g c components/mapa/mapa-editar --flat --spec=false --module=app.module
+
+
+App de youtube
+
+https://developers.google.com/youtube/v3/docs
+
+Canal 
+https://www.youtube.com/channel/UCuaPTYj15JSkETGnEseaFFg
+
+
+ng g c components/navbar --skipTests
+ng g c pages/home --skipTests
+ng g s services/youtube
+
+AIzaSyCYwP3EG-xionykHcRFXAznexHifl40m-U
+UCuaPTYj15JSkETGnEseaFFg
+
+uploads = playlist
+UUuaPTYj15JSkETGnEseaFFg
