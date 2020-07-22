@@ -939,3 +939,42 @@ this.videos.push(...resp);  --> para  dicionar el arreglo resp a this.videos
 
 npm install sweetalert2@8.11.6 
 
+14-Despliegue
+Subir a producción
+
+generar carpeta dist   --> para preproduccion 
+ng build
+
+montar rapidamente un servidor de node
+https://www.npmjs.com/package/http-server
+
+npm install --global http-server
+
+cd dist/Despliegue
+
+http-server -o              ----> servidor de node
+
+http://127.0.0.1:8080/
+
+
+a produccion 
+
+en environments/environment.ts:
+export const environment = {
+  production: true
+};
+
+ng build --prod
+
+guia de estilos
+https://angular.io/guide/styleguide
+
+angular cli
+https://cli.angular.io/reference.pdf
+
+typescript
+https://www.typescriptlang.org/docs/handbook/basic-types.html
+
+
+tutorial
+https://angular.io/tutorial
