@@ -985,4 +985,19 @@ Firabase Storage
 ng g c components/fotos --spec=false -is
 ng g c components/carga --spec=false -is
 
+ng g s services/cargaImagenes --spec=false
+
+uso de angularfire2
+https://github.com/IdanCo/angularfire2
+
+npm install firebase angularfire2 --save
+
+corregir error
+npm uninstall firebase angularfire2 --save
+
+npm cache clean
+npm install firebase@4.8.0 angularfire2 --save
+
+
+
 
