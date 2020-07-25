@@ -978,3 +978,11 @@ https://www.typescriptlang.org/docs/handbook/basic-types.html
 
 tutorial
 https://angular.io/tutorial
+
+
+Firabase Storage
+
+ng g c components/fotos --spec=false -is
+ng g c components/carga --spec=false -is
+
+
