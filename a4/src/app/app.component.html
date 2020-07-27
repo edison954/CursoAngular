@@ -1,9 +1,16 @@
 ************** <br>
-<div *ngIf="usuario; else login">
-  Bienvenido {{ usuario }}
-</div>
+<div *ngIf="usuario; then logout; else login"></div>
 
 <br>****************
+
+<ng-template #logout>
+
+  Bienvenido {{ usuario }}
+
+</ng-template>
+
+
+
 <ng-template #login>
   Por favor ingrese <br>
 
