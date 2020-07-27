@@ -1,0 +1,10 @@
+<div *ngIf="usuario">
+  Bienvenido {{ usuario }}
+</div>
+
+<div *ngIf="!usuario">
+  Por favor ingrese <br>
+
+  <button class="btn btn-outline-primary" (click)="usuario = 'Edison'">Ingresar</button>
+
+</div>
