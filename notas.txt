@@ -998,6 +998,6 @@ npm uninstall firebase angularfire2 --save
 npm cache clean
 npm install firebase@4.8.0 angularfire2 --save
 
-
+ng g d directives/ngDropFiles --spec=false      --Crear directiva para subir archivos
 
 

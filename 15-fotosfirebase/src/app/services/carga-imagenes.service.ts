@@ -23,7 +23,7 @@ export class CargaImagenesService {
   cargarImagenesFirebase(imagenes: FileItem[]) {
     console.log(imagenes);
     const storageRef = firebase.storage().ref();
-    let urlDownload;
+
 
     for (const item of imagenes) {
 
@@ -36,6 +36,7 @@ export class CargaImagenesService {
         storageRef.child(`${this.CARPETA_IMAGENES}/${item.nombreArchivo}`)
           .put(item.archivo);
 
+      let urlDownload;
       storageRef.child(`${this.CARPETA_IMAGENES}/${item.nombreArchivo}`).getDownloadURL().then(ref => {
         urlDownload = ref;
       });
