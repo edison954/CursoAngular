@@ -1060,3 +1060,12 @@ ngIf else  (ng-template)
 GRAFICAS
 https://www.chartjs.org/
 https://valor-software.com/ng2-charts/
+https://www.chartjs.org/docs/latest/
+https://cdnjs.com/libraries/Chart.js
+
+npm install --save ng2-charts
+npm install --save chart.js
+
+https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js
+
+ng g c components/linea
