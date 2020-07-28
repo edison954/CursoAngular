@@ -1013,3 +1013,50 @@ npm install -g @angular/cli@latest
 rm -rf node_modules dist # use rmdir /S/Q node_modules dist in Windows Command Prompt; use rm -r -fo node_modules,dist in Windows PowerShell
 npm install --save-dev @angular/cli@latest
 npm install
+
+ver version instalada
+ng --version
+
+
+ngIf else  (ng-template)
+
+
+************** <br>
+<div *ngIf="usuario; else login">
+  Bienvenido {{ usuario }}
+</div>
+
+<br>****************
+<ng-template #login>
+  Por favor ingrese <br>
+
+  <button class="btn btn-outline-primary" (click)="usuario = 'Edison'">Ingresar</button>
+
+</ng-template>
+
+
+
+-------------------------------------------------------------------------ngIf then else
+************** <br>
+<div *ngIf="usuario; then logout; else login"></div>
+
+<br>****************
+
+<ng-template #logout>
+
+  Bienvenido {{ usuario }}
+
+</ng-template>
+
+
+
+<ng-template #login>
+  Por favor ingrese <br>
+
+  <button class="btn btn-outline-primary" (click)="usuario = 'Edison'">Ingresar</button>
+
+</ng-template>
+
+GRAFICAS
+https://www.chartjs.org/
+https://valor-software.com/ng2-charts/
