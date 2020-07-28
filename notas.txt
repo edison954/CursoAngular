@@ -1069,3 +1069,9 @@ npm install --save chart.js
 https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js
 
 ng g c components/linea
+
+VirtualScroll
+
+ng g c components/virtual --spec=false
+
+npm install @angular/cdk
