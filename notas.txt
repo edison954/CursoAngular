@@ -1095,3 +1095,10 @@ https://gist.github.com/Klerith/189ee4f60efbae3f673d3c04c3d31128
 
 
 proyecto de Game of the year
+
+ng g c pages/inicio
+
+crear modulo
+ng g m components/components --flat
+ng g c components/navbar                  ---> lo importa en el modulo dentro de components
+ng g c components/grafico-barra-horizontal
