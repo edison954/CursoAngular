@@ -1089,3 +1089,9 @@ https://restcountries.eu/rest/v2/lang/es
 
 https://material.angular.io/cdk/scrolling/overview
 https://material.angular.io/cdk/drag-drop/examples
+
+instalacciones
+https://gist.github.com/Klerith/189ee4f60efbae3f673d3c04c3d31128
+
+
+proyecto de Game of the year
