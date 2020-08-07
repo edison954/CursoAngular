@@ -1164,6 +1164,22 @@ http://localhost:5000/firestore-grafica-4a698/us-central1/getGOTY
 
 http://localhost:5000/firestore-grafica-4a698/us-central1/getGOTY?nombre=juan
 
+// express para peticiones post, put etc
+
+cd functions
+npm install express cors
+
+tipados
+npm install @types/express --save-dev       --save-dev para que instale las dependencias solo para desarrollo
+npm install @types/cors --save-dev 
+
+get
+http://localhost:5000/firestore-grafica-4a698/us-central1/api/goty
+post
+http://localhost:5000/firestore-grafica-4a698/us-central1/api/goty/abc123
 
 
 
+ejecutar en consolas diferentes:
+firebase serve
+tsc --watch
