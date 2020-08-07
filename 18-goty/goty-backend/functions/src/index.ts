@@ -68,7 +68,17 @@ app.post('/goty/:id', async(req, res) => {
             mensaje: 'No existe un juego con ese ID ' + id
         })
     } else {
-        res.json('Juego existe');
+        // res.json('Juego existe');
+
+        const antes = gameSnap.data() || { votos: 0};
+        await gameRef.update({
+            votos: antes.votos + 1
+         });
+
+         res.json({
+             ok: true,
+             mensaje: `Gracias por tu voto a ${ antes.name }`
+         });
     }
 
 
