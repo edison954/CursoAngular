@@ -1102,3 +1102,34 @@ crear modulo
 ng g m components/components --flat
 ng g c components/navbar                  ---> lo importa en el modulo dentro de components
 ng g c components/grafico-barra-horizontal
+
+charts
+https://swimlane.github.io/ngx-charts/#/ngx-charts/bar-vertical
+https://stackblitz.com/edit/vertical-bar-chart?embed=1&file=app/app.component.ts
+https://github.com/swimlane/ngx-charts
+https://swimlane.gitbook.io/ngx-charts/
+
+npm install @swimlane/ngx-charts --save
+
+generar numero aleatorio
+console.log( Math.round( Math.random() * 500));
+
+forin
+
+    for(let i in this.results) { 
+      this.results[i].value = Math.round( Math.random() * 500);
+    }
+
+
+regresar un nuevo arreglo a partir de this.results
+    const newResults = [...this.results];
+
+
+ojo con las fugas de memoria del setInterval
+para ello implementar el OnDestroy
+
+    this.intervalo = setInterval(() => { ... }
+
+  ngOnDestroy() {
+    clearInterval( this.intervalo );
+  }
