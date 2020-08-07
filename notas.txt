@@ -1133,3 +1133,35 @@ para ello implementar el OnDestroy
   ngOnDestroy() {
     clearInterval( this.intervalo );
   }
+
+
+
+Instalar firebase tools para usar functions
+
+$ npm install -g firebase-tools
+
+firebase --version
+
+firebase login          --> abre pagina de autenticacion.  /muestra usuario authenticado
+firebase logout         ->> cerrar sesion
+firebase init
+
+probarlo en produccion
+firebase deploy
+
+probarlo local
+firebase serve
+
+ctrl + l    --> limpiar consola
+
+cd functions
+npm run build
+
+tsc --watch     -> para evitar ejecutar siempre el npm run build y que se compile a javascript al guardar cambios
+
+
+
+
+
+
+
