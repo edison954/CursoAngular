@@ -1160,7 +1160,9 @@ npm run build
 tsc --watch     -> para evitar ejecutar siempre el npm run build y que se compile a javascript al guardar cambios
 
 
+http://localhost:5000/firestore-grafica-4a698/us-central1/getGOTY
 
+http://localhost:5000/firestore-grafica-4a698/us-central1/getGOTY?nombre=juan
 
 
 

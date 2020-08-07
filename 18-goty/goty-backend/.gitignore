@@ -1,3 +1,7 @@
+serviceAccountKey.json
+src/serviceAccountKey.json
+lib/*
+
 # Logs
 logs
 *.log
