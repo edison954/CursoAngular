@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, Input } from '@angular/core';
 
 
 
@@ -9,24 +9,27 @@ import { Component, OnDestroy } from '@angular/core';
 })
 export class GraficoBarraHorizontalComponent implements OnDestroy {
 
-  results: any[] = [
-    {
-      "name": "Juego 1",
-      "value": 20
-    },
-    {
-      "name": "Juego 2",
-      "value": 25
-    },
-    {
-      "name": "Juego 3",
-      "value": 15
-    },
-    {
-      "name": "Juego 4",
-      "value": 30
-    }
-  ];
+  @Input() results: any[] = [];
+
+
+  // results: any[] = [
+  //   {
+  //     "name": "Juego 1",
+  //     "value": 20
+  //   },
+  //   {
+  //     "name": "Juego 2",
+  //     "value": 25
+  //   },
+  //   {
+  //     "name": "Juego 3",
+  //     "value": 15
+  //   },
+  //   {
+  //     "name": "Juego 4",
+  //     "value": 30
+  //   }
+  // ];
 
 
   // options
@@ -41,23 +44,23 @@ export class GraficoBarraHorizontalComponent implements OnDestroy {
 
   colorScheme = 'nightLights';
 
-  intervalo;
+  // intervalo;
 
   constructor() {
     console.log( Math.round( Math.random() * 500));
 
 
-    this.intervalo = setInterval(() => {
-      console.log('tick');
+    // this.intervalo = setInterval(() => {
+    //   console.log('tick');
 
-      const newResults = [...this.results];
+    //   const newResults = [...this.results];
 
-      for(let i in newResults) { 
-        newResults[i].value = Math.round( Math.random() * 500);
-      }
+    //   for(let i in newResults) { 
+    //     newResults[i].value = Math.round( Math.random() * 500);
+    //   }
 
-      this.results = [...newResults];
-    }, 1500);
+    //   this.results = [...newResults];
+    // }, 1500);
 
 
   }
@@ -67,7 +70,7 @@ export class GraficoBarraHorizontalComponent implements OnDestroy {
   }
 
   ngOnDestroy() {
-    clearInterval( this.intervalo );
+    // clearInterval( this.intervalo );
   }
 
 }

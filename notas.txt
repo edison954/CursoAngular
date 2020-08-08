@@ -1228,3 +1228,46 @@ export class GameService {
   }
 
 }
+
+
+--------
+Desestructuracion de objetos
+
+    this.db.collection('goty').valueChanges()
+      .pipe(
+        map (( resp: Game[]) =>  {
+          return resp.map( ({ name, votos}) => ({ name, value: votos}) );
+        })
+      )
+      .subscribe( resp => {
+
+        console.log(resp);
+
+      });
+
+  }
+
+------- lo anterior es lo mismo que
+
+    this.db.collection('goty').valueChanges()
+      .pipe(
+        map (( resp: Game[]) =>  {
+          // return resp.map( ({ name, votos}) => ({ name, value: votos}) );
+          return resp.map( juego => {
+            return {
+              name: juego.name,
+              value: juego.votos
+            };
+          });
+        })
+      )
+      .subscribe( resp => {
+
+        console.log(resp);
+
+      });
+
+
+      
+
+
